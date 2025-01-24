@@ -30,7 +30,7 @@ public final class EntityUtil
         equipment.forEach(e->{
             if(!e.isEmpty())
             {
-                EquipmentSlot slot = EquipmentSlot.values()[2 + slotIndex.getValue()];
+                EquipmentSlot slot = EquipmentSlot.values()[slotIndex.getValue() % EquipmentSlot.values().length];
                 if(e.getAttributeModifiers(slot).containsKey(BMEntities.ATT_PROJECTILE_RESISTANCE.get()))
                 {
                     Collection<AttributeModifier> modifiers = e.getAttributeModifiers(slot).get(BMEntities.ATT_PROJECTILE_RESISTANCE.get());
